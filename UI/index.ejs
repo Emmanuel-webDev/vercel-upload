@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New profile</title>
+    <link rel="stylesheet" href="http://localhost:3000/styles.css">
+</head>
+<body>
+    <main>
+        <h4>Profiles.org</h4>
+       <button class="btn"><a href="/register">Add a new user</a></button> <br>
+        <section>
+            <ul>
+                <% for (const x of users){ %>
+         <li>
+             <article>
+                <img src="<%= x.imagePath %>" alt="Users profile picture">
+                <h1><%= x.name %></h1>
+             </article>
+             <div class="class">
+                <p><%= x.bio %></p>
+            </div>
+           
+            <form action="/del" method="post">
+                <button class="btn">Delete user</button>
+            </form>
+         </li>
+         <% } %>
+            </ul>
+        </section>
+       
+        
+    </main>
+</body>
+</html>
